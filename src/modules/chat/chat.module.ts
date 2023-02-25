@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: 王远昭
+ * @Date: 2023-02-25 12:17:23
+ * @LastEditors: 王远昭
+ * @LastEditTime: 2023-02-25 22:43:58
+ */
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ChatGateway } from './chat.gateway';
@@ -21,15 +29,15 @@ export class ChatModule {
     private readonly groupRepository: Repository<Group>,
   ) {}
   async onModuleInit() {
-    const defaultGroup = await this.groupRepository.find({groupName: '阿童木聊天室'});
+    const defaultGroup = await this.groupRepository.find({groupName: 'LiteChat聊天室'});
     if(!defaultGroup.length) {
       await this.groupRepository.save({
-        groupId: '阿童木聊天室',
-        groupName: '阿童木聊天室',
+        groupId: 'LiteChat聊天室',
+        groupName: 'LiteChat聊天室',
         userId: 'admin',
         createTime: new Date().valueOf()
       });
-      console.log('create default group 阿童木聊天室');
+      console.log('create default group LiteChat聊天室');
     }
   }
 }

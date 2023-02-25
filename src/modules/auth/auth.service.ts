@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2023-02-25 12:17:23
  * @LastEditors: 王远昭
- * @LastEditTime: 2023-02-25 20:36:12
+ * @LastEditTime: 2023-02-25 22:34:59
  */
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
@@ -58,7 +58,7 @@ export class AuthService {
     const payload = {userId: newUser.userId, password: newUser.password};
     await this.groupUserRepository.save({
       userId: newUser.userId,
-      groupId: '1',
+      groupId: "LiteChat聊天室",
     });
     return {
       msg:'注册成功',
