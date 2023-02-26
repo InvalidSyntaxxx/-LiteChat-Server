@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2023-02-25 12:17:23
  * @LastEditors: 王远昭
- * @LastEditTime: 2023-02-26 16:48:34
+ * @LastEditTime: 2023-02-26 23:22:57
  */
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
@@ -19,7 +19,10 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   // 允许跨域
-  app.enableCors();
+  app.enableCors({ 
+    credentials: true,
+    origin: true 
+  });
   
   // 全局中间件
   app.use(logger);

@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2023-02-25 12:17:23
  * @LastEditors: 王远昭
- * @LastEditTime: 2023-02-26 13:23:31
+ * @LastEditTime: 2023-02-26 23:05:09
  */
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
@@ -19,7 +19,7 @@ export class User {
   @Column({ default: '123456', select: false })
   password: string;
 
-  @Column({ default: 'chenguanxi.png' })
+  @Column({ default: 'qiaobiluo.png' })
   avatar: string;
 
   @Column({ default: 'user' })
