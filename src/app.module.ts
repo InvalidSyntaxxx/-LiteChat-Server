@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2023-02-25 12:17:23
  * @LastEditors: 王远昭
- * @LastEditTime: 2023-02-25 13:19:24
+ * @LastEditTime: 2023-02-26 15:43:37
  */
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -19,9 +19,9 @@ import { AuthModule } from './modules/auth/auth.module';
     TypeOrmModule.forRoot({
       type: 'mysql',
       port: 3306,
-      host: 'your IP',  // 数据库地址，本地服务则填 localhost
-      username: 'username', // 数据库用户名
-      password: 'password', // 数据库密码。 麻烦给个star谢谢，https://github.com/InvalidSyntaxxx/LiteChat-Server
+      host: 'rm-2ze03qh9385jbo2m12o.rwlb.rds.aliyuncs.com',  // 数据库地址，本地服务则填 localhost
+      username: 'redamancy9189', // 数据库用户名
+      password: 'WANGchen0809', // 数据库密码。 麻烦给个star谢谢，https://github.com/InvalidSyntaxxx/LiteChat-Server
       database: 'chat',
       charset: "utf8mb4", // 设置chatset编码为utf8mb4
       autoLoadEntities: true,

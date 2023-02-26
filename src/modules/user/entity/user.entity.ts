@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: 王远昭
+ * @Date: 2023-02-25 12:17:23
+ * @LastEditors: 王远昭
+ * @LastEditTime: 2023-02-26 13:23:31
+ */
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -5,7 +13,7 @@ export class User {
   @PrimaryGeneratedColumn("uuid")
   userId: string;
 
-  @Column({ default: '陈冠希' })
+  @Column({ default: 'ikun' })
   username: string;
 
   @Column({ default: '123456', select: false })

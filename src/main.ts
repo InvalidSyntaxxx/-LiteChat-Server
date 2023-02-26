@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: 王远昭
+ * @Date: 2023-02-25 12:17:23
+ * @LastEditors: 王远昭
+ * @LastEditTime: 2023-02-26 15:40:28
+ */
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
@@ -26,7 +34,9 @@ async function bootstrap() {
       res.set('Cache-Control', 'max-age=2592000')
     }
   });
-
+// 允许跨域
+  app.enableCors();
+  
   await app.listen(3000);
 }
 bootstrap();
