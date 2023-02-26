@@ -35,6 +35,9 @@ export class UserService {
         data = await this.userRepository.findOne({
           where:{userId: userId}
         });
+
+        // 服务器地址
+        data['avatar'] = "http://47.94.12.50:8080/api/" + data['avatar'];
         return { msg:'获取用户成功', data };
       }
     } catch(e) {
