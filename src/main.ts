@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2023-02-25 12:17:23
  * @LastEditors: 王远昭
- * @LastEditTime: 2023-02-26 15:40:28
+ * @LastEditTime: 2023-02-26 16:48:34
  */
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
@@ -18,6 +18,9 @@ async function bootstrap() {
   // const app = await NestFactory.create(AppModule);
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
+  // 允许跨域
+  app.enableCors();
+  
   // 全局中间件
   app.use(logger);
 
@@ -34,8 +37,8 @@ async function bootstrap() {
       res.set('Cache-Control', 'max-age=2592000')
     }
   });
-// 允许跨域
-  app.enableCors();
+
+
   
   await app.listen(3000);
 }
