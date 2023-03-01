@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2023-02-25 12:17:23
  * @LastEditors: 王远昭
- * @LastEditTime: 2023-02-25 22:43:58
+ * @LastEditTime: 2023-03-01 13:50:23
  */
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -34,7 +34,7 @@ export class ChatModule {
       await this.groupRepository.save({
         groupId: 'LiteChat聊天室',
         groupName: 'LiteChat聊天室',
-        userId: 'admin',
+        userId: 'wyz',
         createTime: new Date().valueOf()
       });
       console.log('create default group LiteChat聊天室');

@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2023-02-25 12:17:23
  * @LastEditors: 王远昭
- * @LastEditTime: 2023-02-28 13:41:56
+ * @LastEditTime: 2023-03-01 13:49:21
  */
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
@@ -17,7 +17,7 @@ import { join } from 'path';
 import * as fs from 'fs';
 
 async function bootstrap() {
-  // 小伙伴们，这里读取的https的证书位置，一定一定要是绝对路劲噢！！！
+  // 一定要是相对路经！！！
   const httpsOptions = {
     key: fs.readFileSync(
       join(__dirname, '../secrets/ssl.key'),
