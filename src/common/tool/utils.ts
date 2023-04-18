@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: 王远昭
+ * @Date: 2023-02-25 12:17:23
+ * @LastEditors: 王远昭
+ * @LastEditTime: 2023-03-10 21:54:17
+ */
 /**
  * 群名/用户名校验
  * @param name
@@ -29,7 +37,7 @@ export function passwordVerify(password: string): boolean {
   if (!passwordReg.test(password)) {
     return false;
   }
-  if (password.length > 9) {
+  if (password.length > 18) {
     return false;
   }
   return true;
