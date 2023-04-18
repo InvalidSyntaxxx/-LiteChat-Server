@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2023-02-25 12:17:23
  * @LastEditors: 王远昭
- * @LastEditTime: 2023-04-18 17:07:49
+ * @LastEditTime: 2023-04-18 17:12:03
  */
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
@@ -41,7 +41,7 @@ async function bootstrap() {
   app.use(logger);
 
   // 全局过滤器
-  // app.useGlobalFilters(new HttpExceptionFilter());
+  app.useGlobalFilters(new HttpExceptionFilter());
 
   // 配置全局拦截器
   app.useGlobalInterceptors(new ResponseInterceptor());
