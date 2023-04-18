@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: 王远昭
+ * @Date: 2023-02-25 12:17:23
+ * @LastEditors: 王远昭
+ * @LastEditTime: 2023-04-18 20:10:01
+ */
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { PassportModule } from '@nestjs/passport';
@@ -15,7 +23,7 @@ import { GroupMap } from '../group/entity/group.entity';
     TypeOrmModule.forFeature([User, GroupMap]),
     JwtModule.register({
       secret: jwtConstants.secret,
-      signOptions: { expiresIn: '3d' },
+      signOptions: { expiresIn: '365d' }, //服务端过期时间
     }),
     PassportModule,
   ],
