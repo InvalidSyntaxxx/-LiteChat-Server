@@ -4,7 +4,7 @@
  * @Author: 王远昭
  * @Date: 2023-02-25 12:17:23
  * @LastEditors: 王远昭
- * @LastEditTime: 2023-04-18 16:37:53
+ * @LastEditTime: 2023-04-18 17:05:50
  */
 import {
   ArgumentsHost,
@@ -24,9 +24,9 @@ export class HttpExceptionFilter implements ExceptionFilter<HttpException> {
     const error = exceptionRes.error;
     let message = exceptionRes.message;
 
-    // if(status === 401) {
-      // message = '身份过期，请重新登录';
-    // }
+    if(status === 401) {
+      message = '身份过期，请重新登录';
+    }
     response.status(200).json({
       code: status,
       timestamp: new Date().toISOString(),
